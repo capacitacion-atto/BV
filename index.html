@@ -18,7 +18,8 @@
     function historico(){
 	  var newRowContent;var dni=$("#txtb").val()
 	  $("#loader").show();$("#2").hide();
-	  var lkn="https://script.google.com/macros/s/AKfycbyEWKNZ_QhB2QxrO3QNanfIbv8Y_MlGqV5YyAgcr7Bf2Y_WnZg/exec?dni="+dni
+	  var lkn="https://script.google.com/macros/s/AKfycbw-pRYLLRrRD6Uj--jeXPa_hF1_pa0VDcqAKumawyymS1mGfksKxRLtyS0r9cY8Kfbg/exec?dni="+dni
+
 	  
       $.getJSON(lkn,function (data) {
        if (data.user.length> 0){
@@ -50,7 +51,7 @@ var valor=$("#rcdni").val();var valor2=$("#rcing").val();var valor3=$("#rcan").v
     
   function buscar(){
 	  $("#loader").show();$("#1").hide();
-	  var crmv;var valor=$("#txtb").val();var valor2=$("#txtb1").val();var lkn="https://script.google.com/macros/s/AKfycbzXXmgDPFG1AT002u8U_wXXWkG43r_qhr26jawtYT080yx5K5PfBcym-68COYPMf3I/exec?dni="+valor+"&ps="+valor2
+	  var crmv;var valor=$("#txtb").val();var valor2=$("#txtpss").val();var lkn="https://script.google.com/macros/s/AKfycbxUKbIUN36gDlKrbyM8RBiHIfQ3d2_aunYrPDW8H-worBl-qKqMbwAwsVH8EtxiWl7m/exec?dni="+valor+"&ps="+valor2
 																									
 																				
 		
@@ -58,20 +59,21 @@ var valor=$("#rcdni").val();var valor2=$("#rcing").val();var valor3=$("#rcan").v
        if (data.user.length> 0){
 		 if(data.user[0]["PASS"]==$("#txtpss").val()){
 	   
-         $("#tnt").html(data.user[0]["NT"]);
-		 $("#tasesor").html(data.user[0]["ASESOR"]);
-		 $("#TDNI").html(data.user[0]["GAP"]);
-		 $("#THOR").html(data.user[0]["NIP"]);
-		 $("#TJOR").html(data.user[0]["JOR"]); 
-		 $("#UGAP").html(data.user[0]["GAP"]);
-		 $("#PGAP").html(data.user[0]["PGAP"]);
-		 $("#tpstlc").html(data.user[0]["PWINCRM"]);
-		 $("#tpf").html(data.user[0]["PNT"]);
-		 $("#tip").html(data.user[0]["NIP"]);
-		 $("#tutlc").html(data.user[0]["WINCRM"]);
-		 $("#tida").html(data.user[0]["IDA"]);
-		 $("#tintr").html(data.user[0]["INTRA"]);
-		 
+         $("#d1").html(data.user[0]["NT"]);
+		 $("#d2").html(data.user[0]["ASESOR"]);
+		 $("#d3").html(data.user[0]["GAP"]);
+		 $("#d4").html(data.user[0]["PGAP"]);
+		 $("#d5").html(data.user[0]["PNT"]);
+		 $("#d6").html(data.user[0]["BARRICA"]); 
+		 $("#d7").html(data.user[0]["PBARRICA"]);
+		 $("#d8").html(data.user[0]["NEOTEL"]);
+		 $("#d9").html(data.user[0]["PNEOTEL"]);
+		 $("#d10").html(data.user[0]["MAGENTO"]);
+		 $("#d11").html(data.user[0]["PMAGENTO"]);
+		 $("#d12").html(data.user[0]["CLN"]);
+		 $("#d13").html(data.user[0]["PCLN"]);
+		 $("#d14").html(data.user[0]["JORNADA"]);
+	
 		 
 		 setTimeout($("#loader").hide(),3000)
 		$("#2").show()
@@ -285,29 +287,40 @@ input[type=number]::-webkit-outer-spin-button {
   <div id="2" class="col-sm-12" style="display:none;overflow-x:hidden;overflow-y:auto" >
 <nav class="navbar navbar-dark bg-dark"style="padding: .1rem 0.1rem;"><span style="color:white;text-align:center;width:100%">MIS DATOS</span></nav>	
   <table class="table" style="font-size:11px;">
-   <tr><td CLASS="bg-dark" style="color:white;width:30%">ASESOR :</td><td id="tasesor"></td></tr>
-   <tr><td CLASS="bg-dark" style="color:white;width:30%">DNI :</td><td id="TDNI"></td></tr>
-   <tr><td CLASS="bg-dark" style="color:white;width:30%">JORNADA</td><td id="TJOR"></td></tr>
-   <tr><td CLASS="bg-dark" style="color:white;width:30%">HORARIO TEORICO</td><td id="THOR"></td></tr>
+   <tr><td CLASS="bg-dark" style="color:white;width:30%">ASESOR :</td><td id="d2"></td></tr>
+   <tr><td CLASS="bg-dark" style="color:white;width:30%">DNI :</td><td id="dsd"></td></tr>
+   <tr><td CLASS="bg-dark" style="color:white;width:30%">JORNADA</td><td id="d14"></td></tr>
   </table>
   <nav class="navbar navbar-dark bg-dark"style="padding: .1rem 0.1rem;"><span style="color:white;text-align:center;width:100%">GAP</span></nav>
   <table class="table" style="font-size:11px;">
-   <tr><td CLASS="bg-dark" style="color:white;width:30%">USUARIO :</td><td id="UGAP"></td></tr>
-   <tr><td CLASS="bg-dark" style="color:white;width:30%">PASS:</td><td id="PGAP"></td></tr>
+   <tr><td CLASS="bg-dark" style="color:white;width:30%">USUARIO :</td><td id="d3"></td></tr>
+   <tr><td CLASS="bg-dark" style="color:white;width:30%">PASS:</td><td id="d4"></td></tr>
   </table>
-  <nav class="navbar navbar-dark bg-dark"style="padding: .1rem 0.1rem;"><span style="color:white;text-align:center;width:100%">USUARIO FORTI</span></nav>
+  <nav class="navbar navbar-dark bg-dark"style="padding: .1rem 0.1rem;"><span style="color:white;text-align:center;width:100%">USUARIO FORTI/NT</span></nav>
   <table class="table" style="font-size:11px;">
-   <tr><td CLASS="bg-dark" style="color:white;width:30%">USUARIO</td><td id="tnt"></td></tr>
-   <tr><td CLASS="bg-dark" style="color:white;width:30%">PASS</td><td id="tpf"></td></tr>
+   <tr><td CLASS="bg-dark" style="color:white;width:30%">USUARIO</td><td id="d1"></td></tr>
+   <tr><td CLASS="bg-dark" style="color:white;width:30%">PASS</td><td id="d5"></td></tr>
   </table>
-  <nav class="navbar navbar-dark bg-dark"style="padding: .1rem 0.1rem;"><span style="color:white;text-align:center;width:100%">USUARIO WIN/CRM/INTRA TLC</span></nav>
+  <nav class="navbar navbar-dark bg-dark"style="padding: .1rem 0.1rem;"><span style="color:white;text-align:center;width:100%">USUARIO BARRICA</span></nav>
   <table class="table" style="font-size:11px;">
-   <tr><td CLASS="bg-dark" style="color:white;width:30%">USUARIO [WIN-CRM -INTRA]</td><td id="tutlc"></td></tr>
-   <tr><td CLASS="bg-dark" style="color:white;width:30%">PASS WIN-CRM</td><td id="tpstlc"></td></tr>
-   <tr><td CLASS="bg-dark" style="color:white;width:30%">PASS INTRA</td><td id="tintr"></td></tr>
-   <tr><td CLASS="bg-dark" style="color:white;width:30%">AVAYA:</td><td id="tida"></td></tr>
+   <tr><td CLASS="bg-dark" style="color:white;width:30%">USUARIO</td><td id="d6"></td></tr>
+   <tr><td CLASS="bg-dark" style="color:white;width:30%">PASS</td><td id="d7"></td></tr>
   </table>
-  
+  <nav class="navbar navbar-dark bg-dark"style="padding: .1rem 0.1rem;"><span style="color:white;text-align:center;width:100%">USUARIO NEOTEL</span></nav>
+  <table class="table" style="font-size:11px;">
+   <tr><td CLASS="bg-dark" style="color:white;width:30%">USUARIO</td><td id="d8"></td></tr>
+   <tr><td CLASS="bg-dark" style="color:white;width:30%">PASS</td><td id="d9"></td></tr>
+  </table>
+   <nav class="navbar navbar-dark bg-dark"style="padding: .1rem 0.1rem;"><span style="color:white;text-align:center;width:100%">USUARIO MAGENTO</span></nav>
+  <table class="table" style="font-size:11px;">
+   <tr><td CLASS="bg-dark" style="color:white;width:30%">USUARIO</td><td id="d10"></td></tr>
+   <tr><td CLASS="bg-dark" style="color:white;width:30%">PASS</td><td id="d11"></td></tr>
+  </table>
+     <nav class="navbar navbar-dark bg-dark"style="padding: .1rem 0.1rem;"><span style="color:white;text-align:center;width:100%">USUARIO CLN</span></nav>
+  <table class="table" style="font-size:11px;">
+   <tr><td CLASS="bg-dark" style="color:white;width:30%">USUARIO</td><td id="d12"></td></tr>
+   <tr><td CLASS="bg-dark" style="color:white;width:30%">PASS</td><td id="d13"></td></tr>
+  </table>
 
 
 </div>
